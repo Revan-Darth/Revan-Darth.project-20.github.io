@@ -15,8 +15,8 @@
 	</head>
 	<body>
 
-		<div class="wrapper _main-page">
-			<header class="header">
+		<div class="wrapper">
+			<header class="header _header-static">
 				<div class="header__container">
 					<div class="header__inner">
 						<a class="header__logo" href="index.html"><img src="images/icons/Logo.png" alt="Logotype"></a>
@@ -53,91 +53,10 @@
 					</div>
 				</div>
 			</header>
+			<img class="header__catalog-bg" src="images/content/catalog-bg.jpg" alt="Фоновое изображение">
 
 			<main id="main">
-				<section class="promo">
-					<div class="promo__container">
-						<div class="promo__inner">
-							<h1 class="promo__title">Жилой комлпекс “Зелёная планета” — место, где хочется жить!</h1>
-							<dl class="promo__list">
-								<div class="promo__list-item promo__list-square">
-									<dd>43 м²</dd>
-									<dt>минимальная площадь квартиры</dt>
-								</div>
-								<div class="promo__list-item promo__list-meter">
-									<dd>55 000 ₽</dd>
-									<dt>минимальная цена квадратного метра</dt>
-								</div>
-								<div class="promo__list-item promo__list-price">
-									<dd>4 765 200 ₽</dd>
-									<dt>минимальная цена квартиры</dt>
-								</div>
-							</dl>
-							<a class="promo__link button" href="apartments.html"><span>Выбрать квартиру</span></a> <!-- Повесить before картинки у текста -->
-						</div>
-					</div>
-				</section>
-				<section class="photos">
-					<h3 class="photos__title title">Фотографии проекта</h3>
-					<div class="photos__inner">
-						<nav class="photos-tabs__nav">
-							<button class="photos-tabs__nav-btn _active" type="button" data-tab='#tab-1'>Архитектура</button>
-							<button class="photos-tabs__nav-btn" type="button" data-tab='#tab-2'>Инфраструктура</button>
-							<button class="photos-tabs__nav-btn" type="button" data-tab='#tab-3'>Другое</button>
-						</nav>
-						<div class="photos-tabs__content">
-							<div class="photos-tabs__item _active" id="tab-1">
-								<div class="photos-tabs__wrapper">
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img1.jpg" alt="Изображение №1">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img2.jpg" alt="Изображение №2">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img3.jpg" alt="Изображение №3">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img4.jpg" alt="Изображение №4">
-									</div>
-								</div>
-							</div>
-							<div class="photos-tabs__item" id="tab-2">
-								<div class="photos-tabs__wrapper">
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img2.jpg" alt="Изображение №1">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img1.jpg" alt="Изображение №2">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img4.jpg" alt="Изображение №3">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img3.jpg" alt="Изображение №4">
-									</div>
-								</div>
-							</div>
-							<div class="photos-tabs__item" id="tab-3">
-								<div class="photos-tabs__wrapper">
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img4.jpg" alt="Изображение №1">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img3.jpg" alt="Изображение №2">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img2.jpg" alt="Изображение №3">
-									</div>
-									<div class="photos-tabs__image">
-										<img src="images/content/photos-img1.jpg" alt="Изображение №4">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="catalog">
+				<section class="catalog _catalog-page">
 					<div class="catalog__container">
 						<h3 class="catalog__title title">Планировки и цены квартир ЖК Зелёная планета</h3>
 						<div class="catalog__inner">
@@ -148,7 +67,15 @@
 							<button class="catalog__filter-btn catalog__filter-btn--close" type="button">
 								<img src="images/icons/cross.svg" alt="Cross SVG">
 							</button>
-								<form class="catalog__form catalog__spollers" action="#" data-spollers>
+							<form class="catalog__form catalog__spollers" action="#" data-spollers>
+									<div class="catalog__sorting">
+										<span class="catalog__sorting-text">Сортировка</span>
+										<select class="catalog__sorting-select" name="sorting">
+											<option value="По умолчанию">По умолчанию</option>
+											<option value="По Возрастанию">По Возрастанию</option>
+											<option value="По Убыванию">По Убыванию</option>
+										</select>
+									</div>
 									<div class="catalog__spollers-item">
 										<button class="catalog__spollers-title _active" type="button" data-spoller tabindex="-1">Номер дома</button>
 										<div class="catalog__spollers-content">
@@ -336,12 +263,12 @@
 										</div>
 									</div>
 									<button class="catalog__spollers-apply button" type="submit">Применить</button>
-								</form>
+							</form>
 							</aside>
 							<div class="catalog__apartments">
 								<div class="catalog__items">
 									<div class="catalog__item">
-										<img class="catalog__item-image" src="images/content/catalog-image1.png" alt="Изображение схемы квартиры">
+										<a class="catalog__item-popup popup-link" href="#popup-enroll"><img class="catalog__item-image" src="images/content/catalog-image1.png" alt="Изображение схемы квартиры"></a>
 										<div class="catalog__item-texts">
 											<div class="catalog__item-header">
 												<b class="catalog__item-title">ТИП 2-Б (3-я очередь)</b>
@@ -411,7 +338,7 @@
 										</div>
 									</div>
 									<div class="catalog__item">
-										<img class="catalog__item-image" src="images/content/catalog-image5.png" alt="Изображение схемы квартиры">
+										<img class="catalog__item-image" src="images/content/catalog-image6.png" alt="Изображение схемы квартиры">
 										<div class="catalog__item-texts">
 											<div class="catalog__item-header">
 												<b class="catalog__item-title">ТИП 2-А (3-я очередь)</b>
@@ -424,30 +351,156 @@
 											</div>
 										</div>
 									</div>
+									<div class="catalog__item">
+										<img class="catalog__item-image" src="images/content/catalog-image7.png" alt="Изображение схемы квартиры">
+										<div class="catalog__item-texts">
+											<div class="catalog__item-header">
+												<b class="catalog__item-title">ТИП 3-А (3-я очередь)</b>
+												<span class="catalog__item-number">035758</span>
+											</div>
+											<span class="catalog__item-floor">Этаж 1 из 9</span>
+											<div class="catalog__item-bottom">
+												<b class="catalog__item-price">7 414 000 ₽</b>
+												<span class="catalog__item-price--squaremeter">81 276 ₽ /м²</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="catalog__item">
+										<img class="catalog__item-image" src="images/content/catalog-image6.png" alt="Изображение схемы квартиры">
+										<div class="catalog__item-texts">
+											<div class="catalog__item-header">
+												<b class="catalog__item-title">ТИП 2-А (3-я очередь)</b>
+												<span class="catalog__item-number">034454</span>
+											</div>
+											<span class="catalog__item-floor">Этаж 1 из 9</span>
+											<div class="catalog__item-bottom">
+												<b class="catalog__item-price">7 751 000 ₽</b>
+												<span class="catalog__item-price--squaremeter">115 000 ₽ /м²  </span>
+											</div>
+										</div>
+									</div>
+									<div class="catalog__item">
+										<img class="catalog__item-image" src="images/content/catalog-image9.png" alt="Изображение схемы квартиры">
+										<div class="catalog__item-texts">
+											<div class="catalog__item-header">
+												<b class="catalog__item-title">ТИП 2-Б (3-я очередь)</b>
+												<span class="catalog__item-number">037451</span>
+											</div>
+											<span class="catalog__item-floor">Этаж 1 из 9</span>
+											<div class="catalog__item-bottom">
+												<b class="catalog__item-price">7 751 000 ₽</b>
+												<span class="catalog__item-price--squaremeter">115 000 ₽ /м²  </span>
+											</div>
+										</div>
+									</div>
+									<div class="catalog__item">
+										<img class="catalog__item-image" src="images/content/catalog-image10.png" alt="Изображение схемы квартиры">
+										<div class="catalog__item-texts">
+											<div class="catalog__item-header">
+												<b class="catalog__item-title">ТИП 2-А (3-я очередь)</b>
+												<span class="catalog__item-number">037408</span>
+											</div>
+											<span class="catalog__item-floor">Этаж 2 из 9</span>
+											<div class="catalog__item-bottom">
+												<b class="catalog__item-price">7 953 000 ₽</b>
+												<span class="catalog__item-price--squaremeter">118 000 ₽ /м²  </span>
+											</div>
+										</div>
+									</div>
+									<div class="catalog__item">
+										<img class="catalog__item-image" src="images/content/catalog-image11.png" alt="Изображение схемы квартиры">
+										<div class="catalog__item-texts">
+											<div class="catalog__item-header">
+												<b class="catalog__item-title">ТИП 2-В (3-я очередь)</b>
+												<span class="catalog__item-number">030450</span>
+											</div>
+											<span class="catalog__item-floor">Этаж 2 из 9</span>
+											<div class="catalog__item-bottom">
+												<b class="catalog__item-price">8 283 600 ₽</b>
+												<span class="catalog__item-price--squaremeter">118 000 ₽ /м²  </span>
+											</div>
+										</div>
+									</div>
+									<div class="catalog__item">
+										<img class="catalog__item-image" src="images/content/catalog-image6.png" alt="Изображение схемы квартиры">
+										<div class="catalog__item-texts">
+											<div class="catalog__item-header">
+												<b class="catalog__item-title">ТИП 2-А (3-я очередь)</b>
+												<span class="catalog__item-number">034454</span>
+											</div>
+											<span class="catalog__item-floor">Этаж 1 из 9</span>
+											<div class="catalog__item-bottom">
+												<b class="catalog__item-price">7 953 000 ₽</b>
+												<span class="catalog__item-price--squaremeter">117 997 ₽ /м² </span>
+											</div>
+										</div>
+									</div>
 								</div>
-								<a class="catalog__apartments-allresult" href="catalog.html">
-									Посмотреть все результаты поиска
-								</a>
+								<button class="catalog__apartments-more" href="#" type="button">
+									Показать ещё
+								</button>
+								<ul class="catalog__pages-list">
+									<li class="catalog__pages-item catalog__pages-prev"><button class="catalog__pages-btn"><img src="images/icons/arrow-prev.svg" alt="Arrow Prev"></button></li>
+									<li class="catalog__pages-item _active"><a>1</a></li>
+									<li class="catalog__pages-item"><a>2</a></li>
+									<li class="catalog__pages-item catalog__pages-item--third"><a>3</a></li>
+									<li class="catalog__pages-item catalog__pages-item--fourth"><a>4</a></li>
+									<li class="catalog__pages-item"><span>...</span></li>
+									<li class="catalog__pages-item"><a>8</a></li>
+									<li class="catalog__pages-item catalog__pages-next"><button class="catalog__pages-btn _active"><img src="images/icons/arrow-next.svg" alt="Arrow Next"></button></li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="presentation">
-					<div class="presentation__container">
-						<div class="presentation__content">
-							<img class="presentation__image" src="images/content/presentation.png" alt="Изображение Презентации">
-							<div class="presentation__text">
+				<div class="popup" id="popup-enroll">
+					<div class="popup__body">
+						<div class="popup__content popup__content-main">
+							<a class="popup__close" href="#">&#10006</a>
+							<div class="popup__content-image">
+								<span class="popup__content-num">034454</span>
+								<img class="popup__content-image" src="images/content/popup-img1.png" alt="Схема Квартиры" >
+							</div>
+							<div class="popup__content-descr">
+								<b class="popup__content-title">ТИП 2-А (3-я очередь)</b>
+								<dl class="popup__content-list">
+									<div class="popup__content-list--wrapper">
+										<dt>40,23 м²</dt>
+										<dd>площадь</dd>
+									</div>
+									<div class="popup__content-list--wrapper">
+										<dt>1 из 9</dt>
+										<dd>этаж</dd>
+									</div>
+								</dl>
+								<div class="popup__content-text">
+									<p class="popup__content-text--item">Номер дома: дом № 3 третья очередь </p>
+									<p class="popup__content-text--item">Количество комнат: 2</p>
+									<p class="popup__content-text--item">Сторона света: ЮГ</p>
+									<p class="popup__content-text--item">Статус: свободна</p>
+								</div>
+								<span class="popup__content-price">7 751 000 руб</span>
+								<span class="popup__content-pricemeter">115 000 руб за м²</span>
+								<a class="popup__content-enroll button" href="#">Записаться на экскурсию</a>
+							</div>
+						</div>
+						<div class="popup__content popup__content_image">
+							<div class="popup__image">
+								<img src="images/content/popup-img2.png" alt="">
+							</div>
+						</div>
+						<div class="popup__content popup__content-presentation presentation__content">
+							<div class="presentation__text presentation__text-popup">
 								<b class="presentation__title title">Презентация жилого комплекса Зелёная планета</b>
-								<p class="presentation__descr">Расположение корпусов, отзывы, ход строительства, планировки и цены на апартаменты в жилом комплексе Зелёная Планета в нашей pdf презентации.</p>
+								<p class="presentation__descr presentation__descr-popup">Расположение корпусов, отзывы, ход строительства, планировки и цены на апартаменты в жилом комплексе Зелёная Планета в нашей pdf презентации.</p>
 								<a class="presentation__link-download button" href="#">Скачать презентацию</a>
 								<p class="presentation__file-info">PDF, 5MB, загрузка ≈ 6 секунд.</p>
 							</div>
+							<img class="presentation__image-popup" src="images/content/popup-img3.png" alt="Изображение Презентации">
 						</div>
 					</div>
-				</section>
-				<section class="map">
-					<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/?azimuth=5.497787143782138&ll=37.412320%2C55.667071&mode=whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=37.412681%2C55.667177&whatshere%5Bzoom%5D=16.11&z=16.99" style="color:#eee;font-size:12px;position:absolute;top:14px;">Мещерский парк — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?azimuth=5.497787143782138&ll=37.412320%2C55.667071&mode=whatshere&whatshere%5Bpoint%5D=37.412681%2C55.667177&whatshere%5Bzoom%5D=16.11&z=16.99" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-				</section>
+				</div>
 				<footer class="footer">
 					<div class="footer__container">
 						<div class="footer__record">
