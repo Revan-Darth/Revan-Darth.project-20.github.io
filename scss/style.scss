@@ -160,6 +160,8 @@ input[type=number] {
 		}
 		&_image{
 			padding: 0;
+			width: auto;
+			max-width: auto;
 		}
 	}
 	&__image img{
@@ -980,6 +982,123 @@ input{
 	align-items: center;
 	.popup__close{
 		top: initial;
+	}
+}
+.documents {
+	color: #252525;
+	padding-bottom: 200px;
+	&__container {}
+	&__inner {
+		display: flex;
+	}
+	&__sidebar {
+		flex: 0 0 300px;
+		background-color: #fff;
+		box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+		padding-top: 2vw;
+		padding-bottom: 2vw;
+		margin-right: 32px;
+	}
+	&__btn {
+		display: block;
+		text-align: left;
+		background-color: transparent;
+		border: none;
+		font-weight: 500;
+		font-size: rem(18);
+		line-height: 1.16;
+		padding-left: 26px;
+		cursor: pointer;
+		position: relative;
+		&._active{
+			&::before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 6px;
+				height: 100%;
+				background-color: #B2D235;
+			}
+		}
+		&:not(:last-child){
+			margin-bottom: 18px;
+		}
+	}
+	&__content {}
+	&__content-block {
+		&:not(:last-child){
+			margin-bottom: 6vw;
+		}
+	}
+	&__content-items{
+		display: grid;
+		grid-template-columns: repeat(3, 275px);
+		grid-gap: 32px 38px;
+	}
+	&__content-title {
+		font-weight: 700;
+		font-size: rem(28);
+		line-height: 1.16;
+		margin-bottom: 2.4vw;
+	}
+	&__content-descr{
+		font-size: rem(20);
+		line-height: 1.16;
+		color: #000;
+		margin-bottom: 1.6vw;
+	}
+	&__content-image--big{}
+	&__content-item {
+		font-size: rem(18);
+		line-height: 1.16;
+		&__image {
+			display: block;
+			max-width: 176px;
+			width: 100%;
+			position: relative;
+			margin-bottom: 14px;
+			&:hover .documents__content-item__loop{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		&__loop {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			visibility: hidden;
+			transition-duration: .2s;
+		}
+		&__title {
+			display: block;
+			max-width: 176px;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 10px;
+			font-weight: 600;
+		}
+		&__title--download{
+			max-width: 100%;
+			text-align: left;
+		}
+		&__info {
+			& > *:not(:last-child){
+				margin-bottom: 4px;
+			}
+		}
+		&__name {}
+		&__post {}
+		&__date {}
+		&__time {}
+	}
+	&__content-item-img__download{
+		display: block;
+		max-width: 176px;
+		width: 100%;
+		margin-bottom: 14px;
 	}
 }
 
